@@ -27,7 +27,6 @@ const int mod = 1e9 + 7;
 ll dp[MAXN], ok[257]; 
 int main() {
  // https://codeforces.com/gym/302977/problem/B // 
-    // goi dp[i] la chuoi con ket thuc tai i // 
     ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
     int n, k; 
     string s; 
@@ -40,11 +39,12 @@ int main() {
     }
     ll cnt = 0 , ans = 0; 
     f(i, s.size()) {
-        if (i == 0) dp[i] = ok[s[i]]; 
+        if (i == 0) cnt = ok[s[i]]; 
         else {
-            if (ok[s[i]]) dp[i] = ++dp[i-1];
+            if (ok[s[i]]) cnt++;
             else {
-                ans += (dp[i - 1]) * (dp[i - 1] + 1) / 2; 
+                ans += (cnt) * (cnt +  1 ) / 2; 
+                cnt = 0; 
             }
         }
     }
