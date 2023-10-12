@@ -27,6 +27,7 @@ const int MAXD = 205;
 const int mod = 1e9 + 7;
 ll cash[6] = { 1 , 5 , 10 , 20 ,100 }; 
 int main() {
+	// https://codeforces.com/problemset/problem/996/A //
 	int n,t; 
 	cin >> n;
 	ll ans = 0; 
